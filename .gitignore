@@ -76,9 +76,9 @@ python/gps/proto/
 *.pb.cc
 
 # MuJoCo
-src/3rdparty/mjpro
-MUJOCO_LOG.TXT
-
+#src/3rdparty/mjpro
+#MUJOCO_LOG.TXT
+src/3rdparty/mjpro/mjkey.txt
 # Vim
 *.swp
 *.swo
