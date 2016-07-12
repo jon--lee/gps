@@ -12,9 +12,11 @@ import copy
 import argparse
 import threading
 import time
+import IPython
+import ipdb
 
 # Add gps/python to path so that imports work.
-sys.path.append('/'.join(str.split(__file__, '/')[:-2]))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 from gps.gui.gps_training_gui import GPSTrainingGUI
 from gps.utility.data_logger import DataLogger
 from gps.sample.sample_list import SampleList
@@ -25,6 +27,7 @@ logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 class GPSMain(object):
     """ Main class to run algorithms and experiments. """
     def __init__(self, config):
+
         self._hyperparams = config
         self._conditions = config['common']['conditions']
         if 'train_conditions' in config['common']:
@@ -64,10 +67,10 @@ class GPSMain(object):
                 self.agent.get_samples(cond, -self._hyperparams['num_samples'])
                 for cond in self._train_idx
             ]
+
             self._take_iteration(itr, traj_sample_lists)
             pol_sample_lists = self._take_policy_samples()
             self._log_data(itr, traj_sample_lists, pol_sample_lists)
-
         self._end()
 
     def test_policy(self, itr, N):
@@ -315,6 +318,7 @@ def main():
                  (exp_name, hyperparams_file))
 
     hyperparams = imp.load_source('hyperparams', hyperparams_file)
+
     if args.targetsetup:
         try:
             import matplotlib.pyplot as plt

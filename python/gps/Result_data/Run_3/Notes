@@ -1,0 +1,41 @@
+Publish this data on the google docs
+Note on what we can learn form the results	
+
+'rk': 0,							Not important for GPS
+'dt': 0.05,							Not important for GPS
+'wu': np.array([1, 1])				Not important for GPS
+'wp': np.array([1, 1])				Not important for GPS
+'weights': [1e-5, 1.0],				Not important for GPS
+
+
+'substeps': 1,						1 - 50						- agent
+'init_var': 0.1,					0 : .1 : 10					- algo
+'stiffness': 0.01,					0 : 0.01 : 10  				- algo
+'regularization': 1e-6				0 : 10 with log scale 		- algo
+'max_clusters': 20					0 : 1 : 100					- algo
+'min_samples_per_cluster': 40		0 : 1 : 100					- algo
+'max_samples': 20					0 : 1 : 100					- algo
+
+
+'T': 100,
+
+Check out other hyperparameters to see which are the ones that changes
+
+See if changing the initial condition will cause the policy learnt to break
+'x0': np.array([0.75*np.pi, 0.5*np.pi, 0, 0, 0, 0, 0]),
+
+
+Increase orders of magnitude for Init_var / Stiffness 
+
+Write feedback on the difficulties that we ran into while running 
+	Write a document on what we tried to do
+	Where are we now
+
+Figure out why breaking at 0 - 1 for clusters
+
+State space / reward function / actions
+	What does the simulator take in 
+	What comes out from the simulator 
+Document code strcuture for main files
+Add in place comments to Sanjay and Animesh
+NEw task: Define a trajectory with reward and get the arm to move in that trajectory  

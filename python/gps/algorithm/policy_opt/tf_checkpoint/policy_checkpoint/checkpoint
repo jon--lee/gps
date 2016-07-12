@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/davinci0/GPS/gps/python/gps/algorithm/policy_opt/tf_checkpoint/policy_checkpoint/_pol_tf_data"
+all_model_checkpoint_paths: "/home/davinci0/GPS/gps/python/gps/algorithm/policy_opt/tf_checkpoint/policy_checkpoint/_pol_tf_data"
